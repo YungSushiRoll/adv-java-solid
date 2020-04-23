@@ -1,8 +1,10 @@
 package edu.wctc.independentcopy;
 
 import edu.wctc.independentcopy.reader.KeyboardReader;
+import edu.wctc.independentcopy.reader.ListReader;
 import edu.wctc.independentcopy.reader.Reader;
 import edu.wctc.independentcopy.writer.ConsoleWriter;
+import edu.wctc.independentcopy.writer.ListWriter;
 import edu.wctc.independentcopy.writer.Writer;
 
 /**
@@ -22,12 +24,23 @@ public class Driver {
          polymorphic!!!
          */
 
-        Reader reader = new KeyboardReader();
-        //Reader reader = new FileReader();
+        /**
+         * @author Joshua Gossett
+         *
+         * The improvements that were made were the ScreenWriter and KeyboardReader classes were removed and were turned
+         * into interfaces Reader and Writer and had their own types that implemented each interface. This helps because
+         * in the other program the copier depends directly on the reader and writer now the copier could copy
+         * multiple types of text
+         */
 
-        Writer writer = new ConsoleWriter();
+        //Reader reader = new KeyboardReader();
+        //Reader reader = new FileReader();
+        Reader reader = new ListReader();
+
+        //Writer writer = new ConsoleWriter();
         //Writer writer = new GuiWriter();
         //Writer writer = new FileWriter();
+        Writer writer = new ListWriter();
 
         /*
         Copy from reader to writer
